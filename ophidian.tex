@@ -8,7 +8,10 @@
 \usepackage{graphicx}
 
 \providefontfamily\samplefont{Scriven}
+\providefontfamily\othersamplefont{DejaVu Sans}
 
+\newcommand{\samplefigure}[1]{{\fontsize{48}{48}\samplefont#1}}
+\newcommand{\samplefigureother}[1]{{\fontsize{48}{48}\othersamplefont#1}}
 \newcommand{\sampleglyph}[1]{{\samplefont\huge#1}}
 \newcommand{\sampletext}[1]{{\samplefont\Large#1}}
 \newcommand{\codepoint}[1]{{\tt\textcolor{gray}{U+}#1}}
@@ -37,6 +40,25 @@ The previous version of this encoding did not specify how combining characters i
 In game text usually represents Ophidian as constant width with rounded ends, similar to many ``comic book'' or ``marker'' fonts but it seems like this may have been at least in part due to the limited resolution of video game graphics in 1993.  Variable width fonts with serifs, nib pen, or brushed appearance would be reasonable.  Combined pairs should be treated as a single character when adjusting character spacing. For highly stylized representations like fonts intended for drop caps, snakes or contrast between fire/chaos and ice/order would be particularly appropriate themes.
 
 For the Earth, Chaos, and Order Serpent symbols, the important qualities are that the Chaos serpent is facing toward the Left, the Order serpent is facing toward the right, and the Earth serpent is facing straight up.  The Chaos and Order serpents should also have their heads past the centre line so they are facing away from it instead of towards it as in \glyphref{CADUCEUS}{2624} or some representations of \glyphref{STAFF OF ASCLEPIUS}{2695}.  The number of undulations and the position of the tail are not significant.  If presented as colour emoji, the Earth Serpent should be gold, the Chaos Serpent red or on fire, and the Order Serpent blue or made of ice.
+
+\begin{figure}
+  \begin{subfigure}{15em}
+    \centering
+    \caption{Ballance}
+    \samplefigure{\char"E5FB\char"200D\char"E5FA\char"200D\char"E5FC}
+  \end{subfigure}
+  \begin{subfigure}{15em}
+    \centering
+    \caption{Caduceus}
+    \samplefigureother{\char"2624}
+  \end{subfigure}
+  \begin{subfigure}{15em}
+    \centering
+    \caption{Staff of Asclepius}
+    \samplefigureother{\char"2695}
+  \end{subfigure}
+\end{figure}
+
 
 \section{Code Tables}
 
@@ -253,9 +275,10 @@ Ophidian is used to write English as a one to one cipher of normal Latin script 
     M & \codepoint{E5EA} & \char"E5EA\\
   \end{tblr}
   \begin{tblr}{  
-      rows = { halign = c, valign = m, ht = 20pt},
-      column{1} = {cmd={\tt\large}},
-      column{3} = {cmd={\sampleglyph}}
+      rows = {valign = m, ht = 20pt},
+      column{1} = {halign=c, cmd={\tt\large}},
+      column{2} = {halign=r},
+      column{3} = {halign=c, cmd={\sampleglyph}}
     }
     N & \codepoint{E5EB} \codepoint{E5E9} & \char"E5EB\char"E5E9\\
     O & \codepoint{E5E9} \codepoint{E5EB} & \char"E5E9\char"E5EB\\
@@ -272,9 +295,10 @@ Ophidian is used to write English as a one to one cipher of normal Latin script 
     Z & \codepoint{E5F0} & \char"E5F0\\
   \end{tblr}
   \begin{tblr}{  
-      rows = { halign = c, valign = m, ht = 20pt},
-      column{1} = {cmd={\tt\large}},
-      column{3} = {cmd={\sampleglyph}}
+      rows = {valign = m, ht = 20pt},
+      column{1} = {halign=c, cmd={\tt\large}},
+      column{2} = {halign=r},
+      column{3} = {halign=c, cmd={\sampleglyph}}
     }
     1 & \codepoint{E5F4} & \char"E5F4\\
     2 & \codepoint{E5F5} \codepoint{E5F3} & \char"E5F5\char"E5F3\\
